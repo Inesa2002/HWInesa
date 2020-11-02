@@ -1,0 +1,27 @@
+
+let array = ['a','b']
+let maxLength=2
+function starting(array1,i,string1,length){
+
+   if(i===length-1){
+       array1.forEach((element)=>{
+           console.log(string1+element);
+       })
+   } else {
+
+       for(let m=0;m<array1.length;m++){
+          let string2 = string1 + array1[m]
+           starting(array1,i+1,string2,length)
+       }
+  }
+}
+
+
+function secondpart (array1,length){
+    for(let i=0;i<length;i++){
+        starting(array1,i,"",length)
+    }
+}
+
+
+secondpart(array,maxLength);
